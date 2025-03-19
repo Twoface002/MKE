@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Money Krishna Education</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" onclick="location.href='styles.css'">
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -34,6 +34,11 @@
         .logo {
             font-size: 2em;
             font-weight: bold;
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+        }
+        .logo:hover {
+            transform: scale(1.15);
         }
         nav ul {
             list-style: none;
@@ -47,6 +52,12 @@
             color: white;
             text-decoration: none;
             font-size: 1.2em;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+        }
+        nav ul li a:hover {
+            color: #ffeb3b;
+            transform: scale(1.1);
         }
         .contact-section {
             padding: 120px 20px;
@@ -77,6 +88,7 @@
             border-radius: 10px;
             text-align: left;
             color: black;
+            transition: background 0.3s, transform 0.3s;
         }
         .contact-form input, .contact-form textarea, .contact-form select {
             width: 100%;
@@ -102,6 +114,7 @@
         }
         .form-group select {
             flex: 1;
+            border: 1px solid #ccc;
         }
         .contact-form button {
             background: #065db9;
@@ -115,10 +128,12 @@
             display: block;
             margin: 20px auto 0;
             text-align: center;
+            transition: background 0.3s, color 0.3s;
         }
         .contact-form button:hover {
             background: #070707;
             color: whitesmoke;
+            transform: scale(1.1);
         }
         footer {
             background: #222;
@@ -138,10 +153,10 @@
         <nav>
             <div class="logo">Money Krishna Education</div>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="Courses.html">Courses</a></li>
-                <li><a href="results.html">Results</a></li>
-                <li><a href="Contact.html">Contact</a></li>
+                <li><a onclick="location.href='index.html'">Home</a></li>
+                <li><a onclick="location.href='courses.html'">Courses</a></li>
+                <li><a onclick="location.href='results.html'">Results</a></li>
+                <li><a onclick="location.href='contact.html'">Contact</a></li>
             </ul>
         </nav>
     </header>

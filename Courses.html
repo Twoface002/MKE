@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Courses - Money Krishna Education</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" onclick="location.href='styles.css'">
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -34,6 +34,11 @@
         .logo {
             font-size: 2em;
             font-weight: bold;
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+        }   
+        .logo:hover {
+            transform: scale(1.15);
         }
         nav ul {
             list-style: none;
@@ -47,6 +52,12 @@
             color: white;
             text-decoration: none;
             font-size: 1.2em;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+        }
+        nav ul li a:hover {
+            color: #ffeb3b;
+            transform: scale(1.1);
         }
         .course-section {
             padding: 120px 20px;
@@ -64,6 +75,7 @@
             box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
             border-radius: 10px;
             text-align: center;
+            transition: background 0.3s, transform 0.3s;
         }
         .course-card h3 {
             color: #004085;
@@ -78,7 +90,7 @@
             border: none;
             cursor: pointer;
             font-size: 1em;
-            border-radius: 5px;
+            border-radius: 30px;
             transition: background 0.3s, transform 0.3s;
         }
         .course-card button:hover {
@@ -104,32 +116,32 @@
         <nav>
             <div class="logo">Money Krishna Education</div>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="Courses.html">Courses</a></li>
-                <li><a href="results.html">Results</a></li>
-                <li><a href="Contact.html">Contact</a></li>
+                <li><a onclick="location.href='index.html'">Home</a></li>
+                <li><a onclick="location.href='courses.html'">Courses</a></li>
+                <li><a onclick="location.href='results.html'">Results</a></li>
+                <li><a onclick="location.href='contact.html'">Contact</a></li>
             </ul>
         </nav>
     </header>
-    
+
     <section class="course-section">
         <div class="course-card">
             <h3>NEET Preparation</h3>
             <p>Comprehensive NEET coaching with expert faculty and detailed study material.</p>
-            <button>Enroll Now</button>
+            <button onclick="location.href='enrollment.html'">Enroll Now</button>
         </div>
         <div class="course-card">
             <h3>JEE (Main & Advanced)</h3>
             <p>Structured JEE coaching for students aiming for top engineering institutes.</p>
-            <button>Enroll Now</button>
+            <button onclick="location.href='enrollment.html'">Enroll Now</button>
         </div>
         <div class="course-card">
             <h3>Foundation Courses</h3>
             <p>Designed for early learners to build a strong foundation in Science and Mathematics.</p>
-            <button>Enroll Now</button>
+            <button onclick="location.href='enrollment.html'">Enroll Now</button>
         </div>
     </section>
-    
+
     <footer>
         <p>&copy; 2025 Money Krishna Education. All rights reserved.</p>
     </footer>
