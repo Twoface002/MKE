@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Money Krishna Education</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background: linear-gradient(135deg, #e3f2fd, #f8f9fa);
+            overflow-x: hidden;
+            color: black;
+        }
+        header {
+            background: #004085;
+            color: white;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 30px;
+        }
+        .logo {
+            font-size: 2em;
+            font-weight: bold;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin: 0 20px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+        .contact-section {
+            padding: 120px 20px;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .contact-text {
+            max-width: 600px;
+        }
+        .contact-text h2 {
+            font-size: 3em;
+            font-weight: bold;
+            color: #004085;
+        }
+        .contact-text p {
+            font-size: 1.2em;
+            margin: 15px 0;
+        }
+        .contact-form {
+            background: white;
+            padding: 30px;
+            max-width: 450px;
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+            border-radius: 10px;
+            text-align: left;
+            color: black;
+        }
+        .contact-form input, .contact-form textarea, .contact-form select {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 30px;
+            font-size: 1em;
+            appearance: none;
+            background: white;
+            position: relative;
+        }
+        .contact-form select {
+            padding-right: 40px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="black"><path d="M7 10l5 5 5-5z"></path></svg>');
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+            background-size: 18px;
+        }
+        .form-group {
+            display: flex;
+            gap: 15px;
+        }
+        .form-group select {
+            flex: 1;
+        }
+        .contact-form button {
+            background: #065db9;
+            color: whitesmoke;
+            padding: 12px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2em;
+            border-radius: 30px;
+            width: 30%;
+            display: block;
+            margin: 20px auto 0;
+            text-align: center;
+        }
+        .contact-form button:hover {
+            background: #070707;
+            color: whitesmoke;
+        }
+        footer {
+            background: #222;
+            color: white;
+            padding: 20px 0;
+            margin-top: 312px;
+            font-size: 1.1em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Money Krishna Education</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="results.html">Results</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="contact-section">
+        <div class="contact-text">
+            <h2>Start Your <span style="color: #00b0ff;">JEE/NEET</span> Preparation Now</h2>
+            <p>Get in-depth learning and superlative results with our personalised two-teacher model.</p>
+            <ul>
+                <li>✅ NEET</li>
+                <li>✅ JEE (Main & Advanced)</li>
+            </ul>
+        </div>
+        <div class="contact-form">
+            <form id="contactForm" action="https://formspree.io/f/xldjggze" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="tel" name="phone" placeholder="Your Phone" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <div class="form-group">
+                    <select name="class" required>
+                        <option value="" disabled selected>Class *</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+                    <select name="exam" required>
+                        <option value="" disabled selected>Exam *</option>
+                        <option value="jee">JEE</option>
+                        <option value="neet">NEET</option>
+                    </select>
+                </div>
+                <button type="submit">Book Now</button>
+            </form>
+            <p id="responseMessage" style="display:none; color: green; font-weight: bold;"></p>
+            
+        </div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Money Krishna Education. All rights reserved.</p>
+    </footer>
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the default form submission
+        
+            let form = event.target;
+            let formData = new FormData(form);
+        
+            fetch(form.action, {
+                method: form.method,
+                body: formData,
+                headers: { "Accept": "application/json" }
+            })
+            .then(response => {
+                if (response.ok) {
+                    document.getElementById("responseMessage").textContent = "Thank you! Your details have been submitted successfully.";
+                    document.getElementById("responseMessage").style.display = "block";
+                    form.reset(); // Reset form after successful submission
+                } else {
+                    document.getElementById("responseMessage").textContent = "Oops! Something went wrong. Please try again.";
+                    document.getElementById("responseMessage").style.color = "red";
+                    document.getElementById("responseMessage").style.display = "block";
+                }
+            })
+            .catch(error => {
+                document.getElementById("responseMessage").textContent = "Error: Unable to submit the form.";
+                document.getElementById("responseMessage").style.color = "red";
+                document.getElementById("responseMessage").style.display = "block";
+            });
+        });
+        </script>
+        
+</body>
+</html>
